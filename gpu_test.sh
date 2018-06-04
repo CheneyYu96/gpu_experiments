@@ -10,12 +10,12 @@ main() {
     LOG_CLIENT=${LOG_DIR}/client
     mkdir -p ${LOG_CLIENT}
     NUM=8216
-    BATCH=1
+    BATCH=16
 
     while [ $BATCH -le 256 ]; do
         for CUR in 10 20; do 
             ./countable_client/inception_client --server=0.0.0.0:9000 --image=test.jpg --concurrency=${CUR} --batch_size=${BATCH} --num_tests=${NUM} \
-            --time_out=5 &> ${LOG_DIR}/client/${CUR}-${BATCH}.log &
+            --time_out=20 &> ${LOG_DIR}/client/${CUR}-${BATCH}.log &
 
             PID=$!
             wait $PID
