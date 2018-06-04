@@ -10,7 +10,7 @@ main() {
     LOG_CLIENT=${LOG_DIR}/client
     mkdir -p ${LOG_CLIENT}
     NUM=8216
-    BATCH=16
+    BATCH=32
 
     while [ $BATCH -le 256 ]; do
         for CUR in 10 20; do 
