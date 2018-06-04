@@ -7,7 +7,8 @@ main() {
     cd /home/ubuntu/example
 
     LOG_DIR=/home/ubuntu/logs
-    mkdir -p ${LOG_DIR}
+    LOG_CLIENT=${LOG_DIR}/client
+    mkdir -p ${LOG_CLIENT}
     NUM=8216
     BATCH=1
 
