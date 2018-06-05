@@ -4,9 +4,6 @@ import pprint
 import re
 import datetime
 
-import click
-import arrow
-
 num = 8216
 
 def extract_data(path='/home/ubuntu/logs/client'):
