@@ -21,8 +21,8 @@ main() {
         ./countable_client/inception_client --server=0.0.0.0:9000 --image=test.jpg --concurrency=${CUR} --batch_size=${BATCH} --num_tests=${NUM} \
         --time_out=${TIME_OUT} &> ${LOG_DIR}/client/${CUR}-${BATCH}.log &
 
-        # PID=$!
-        # wait $PID
+        PID=$!
+        wait $PID
     done
 
 }
