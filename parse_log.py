@@ -19,10 +19,11 @@ def extract_data(path='/home/ubuntu/logs/client'):
 		with open(log_file, 'r') as f:
 			lines = f.readlines()
 			last_line = lines[-1]
+			# print last_line
 			match = times_regex.match(last_line)
 			times = int(match.groupdict()['times'])
 
-		data.append((cur, batch, times))
+		data.append((int(cur), int(batch), times))
 
 	return data
 
