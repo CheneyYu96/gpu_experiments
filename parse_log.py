@@ -33,7 +33,7 @@ def parse(data):
 		cost.append(0.9 / 3600 * times / (batch * num * 1000))
 
 	print('{num:8} {cur:8} {batch:8} {total:8} {times:16} {cost:16}'.format(num='num', cur='cur', batch='batch', total='total(ms)' ,times='ms/req', cost='$/req'))
-	for data, cost in zip(data, cost):
+	for cost, data in sorted(zip(cost, data)):
 		print('{num:8} {cur:8} {batch:8} {total:8} {times:16} {cost:16}'.format(num=num, cur=data[0], batch=data[1], total=data[2], times=data[2]/(data[1] * num +0.0), cost=cost))
     	# print('{cur:12} {batch:12} {times:12} {cost:12}'.format(cur=data[0], batch=data[1], times=data[2]))
 
